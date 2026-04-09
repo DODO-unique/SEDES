@@ -1,0 +1,10 @@
+FUNCTION DecodeImage(image):
+    binaryMessage = EMPTY STRING  q
+
+    FOR each pixel IN image:
+        red, green, blue = pixel values
+        binaryMessage += LSB of red
+    characters = Split binaryMessage into 8-bit chunks
+    message = Convert each chunk to character
+    RETURN message until delimiter
+END FUNCTION

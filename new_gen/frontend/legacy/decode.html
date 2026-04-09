@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProDot — Decode</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="decode.css" />
+  </head>
+  <body>
+    <nav>
+      <a class="nav-logo" href="prodot_login.html">
+        <span class="logo-dot"></span>
+        ProDot
+      </a>
+
+      <div class="nav-tabs">
+        <a class="nav-tab" href="encode.html">Encode</a>
+        <a class="nav-tab active" href="decode.html">Decode</a>
+      </div>
+
+      <div class="nav-right">
+        <div class="user-chip">
+          <div class="avatar">U</div>
+          <span>user@prodot.io</span>
+        </div>
+      </div>
+    </nav>
+
+    <canvas id="hidden-canvas"></canvas>
+
+    <main>
+      <!-- LEFT -->
+      <div>
+        <div class="col-header fade-in">
+          <p class="col-eyebrow">Reveal what's hidden</p>
+          <h1 class="col-title">Decode the <em>invisible.</em></h1>
+          <p class="col-sub">
+            Upload an encoded image — we'll scan every pixel's least significant
+            bits and reconstruct the hidden message within.
+          </p>
+        </div>
+
+        <div class="card fade-in">
+          <div style="margin-bottom: 0.5rem">
+            <span
+              style="
+                font-size: 10px;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: var(--text-dim);
+              "
+              >Encoded Image</span
+            >
+          </div>
+          <div class="upload-zone" id="upload-zone">
+            <input type="file" id="img-input" accept="image/*" />
+            <div class="upload-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+            </div>
+            <span class="upload-label"
+              ><strong>Upload encoded image</strong></span
+            >
+            <span class="upload-hint"
+              >Use a PNG encoded by ProDot · JPG will corrupt the LSB data</span
+            >
+          </div>
+
+          <div id="preview-wrap">
+            <img id="preview-img" alt="preview" />
+            <span class="preview-badge">Loaded</span>
+          </div>
+
+          <div class="meta-grid" id="meta-grid" style="display: none">
+            <div class="meta-item">
+              <div class="meta-label">Width</div>
+              <div class="meta-value" id="meta-w">—</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Height</div>
+              <div class="meta-value" id="meta-h">—</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Pixels</div>
+              <div class="meta-value" id="meta-px">—</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Max capacity</div>
+              <div class="meta-value" id="meta-cap">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card fade-in">
+          <div class="col-eyebrow" style="margin-bottom: 12px">
+            Binary stream preview
+          </div>
+          <div class="binary-stream" id="binary-stream">
+            Awaiting image upload — LSB data will stream here…
+          </div>
+          <button
+            class="btn-primary"
+            id="decode-btn"
+            disabled
+            style="margin-top: 1.2rem"
+          >
+            Decode Message →
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="output-col">
+        <div class="col-header fade-in">
+          <p class="col-eyebrow">Extracted message</p>
+          <h1 class="col-title">The <em>secret</em> revealed.</h1>
+          <p class="col-sub">
+            LSB bits are extracted and reconstructed into readable text — byte
+            by byte, pixel by pixel.
+          </p>
+        </div>
+
+        <!-- SCAN ANIMATION AREA -->
+        <div
+          class="card fade-in"
+          style="flex: 1; display: flex; flex-direction: column; gap: 1.2rem"
+        >
+          <div class="scan-wrap" id="scan-wrap">
+            <div class="scan-line" id="scan-line"></div>
+            <div class="scan-placeholder" id="scan-placeholder">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#c9a96e"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="opacity: 0.35"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+              <span>Upload a ProDot encoded image<br />and click Decode</span>
+            </div>
+          </div>
+
+          <!-- REVEALED MESSAGE -->
+          <div class="message-reveal" id="message-reveal">
+            <div class="message-header">
+              <span class="message-label">Hidden message</span>
+              <button class="copy-btn" id="copy-btn">Copy</button>
+            </div>
+            <div class="message-box">
+              <div class="message-body" id="message-body"></div>
+            </div>
+          </div>
+
+          <!-- NO MESSAGE -->
+          <div class="no-message-note" id="no-message-note">
+            No hidden message found in this image.
+          </div>
+
+          <!-- STATS -->
+          <div class="stats-grid" id="stats-grid" style="display: none">
+            <div class="stat">
+              <div class="stat-val" id="stat-chars">0</div>
+              <div class="stat-label">Characters</div>
+            </div>
+            <div class="stat">
+              <div class="stat-val" id="stat-bits">0</div>
+              <div class="stat-label">Bits read</div>
+            </div>
+            <div class="stat">
+              <div class="stat-val" id="stat-pixels">0</div>
+              <div class="stat-label">Pixels scanned</div>
+            </div>
+          </div>
+
+          <div class="status-bar">
+            <div class="status-dot" id="status-dot"></div>
+            <span id="status-text">Waiting for image…</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="decode.js"></script>
+  </body>
+</html>

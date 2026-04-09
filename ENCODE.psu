@@ -1,0 +1,14 @@
+FUNCTION EncodeImage(image, message):
+    Append delimiter to message
+    binaryMessage = Convert message to binary
+    bitIndex = 0
+
+    FOR each pixel IN image:
+        IF bitIndex >= length of binaryMessage:
+            BREAK
+        red, green, blue = pixel values
+        red = Replace LSB of red with binaryMessage[bitIndex]
+        bitIndex = bitIndex + 1
+        Set pixel values in image
+    SAVE image as output
+END FUNCTION

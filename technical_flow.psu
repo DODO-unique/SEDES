@@ -1,0 +1,20 @@
+[take payload] -> 
+
+[encrypt payload: AES or ChaCha20 (cryptography library), using ECC, RSA] -> 
+
+[create flag based on target] -> 
+
+[embed cipher text + flag in carrier] -> 
+
+[transfer through SFTP/SSH] -> 
+
+[reverse of the process]
+
+HMAC & SHA-256 Integrity
+
+Though SFTP/SSH give good integrity, Application level hashing techniques would be implemented- so private keys would encrypt hashes to create digital signatures.
+
+With hashes, flag metadata, sequences, we create a metadata managing module
+
+Databases:
+Databases on both sides store relevant keys, flag informations, and metadata.
