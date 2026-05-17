@@ -1,0 +1,85 @@
+2026-04-09T22:14:47.760292 -> Created logs
+api/routers/auth.py at 2026-04-09T22:14:51.110973 :
+	Registration request received for username: victor_press
+Auth/common/username_check.py at 2026-04-09T22:14:51.111723 :
+	Received request to check user: value='victor_press' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-04-09T22:14:51.112335 :
+	checking email availability
+database/ORM_1 at 2026-04-09T22:14:51.113417 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-04-09T22:14:51.172227 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:14:51.172884 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-04-09T22:14:51.174637 :
+	Is email taken?: True
+Auth/common/username_check.py at 2026-04-09T22:14:51.175164 :
+	email_availability: False
+Auth/common/username_check.py at 2026-04-09T22:14:51.175602 :
+	checking username availability
+database/ORM_1 at 2026-04-09T22:14:51.176305 :
+	Executing DB query to check if Users.uname with value value='victor_press' exists.
+database/ORM_1 at 2026-04-09T22:14:51.179984 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:14:51.180552 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-04-09T22:14:51.182097 :
+	Is username taken?: True
+Auth/common/username_check.py at 2026-04-09T22:14:51.182631 :
+	Received a response, returning to registration module
+utils/ErrorHandler at 2026-04-09T22:14:51.183077 :
+	Error occurred: Username or email already taken., with error code: 3004, exception type: ValueError, and exception message: Username or email already taken.
+api/routers/auth.py at 2026-04-09T22:15:01.326416 :
+	Registration request received for username: victor_press
+Auth/common/username_check.py at 2026-04-09T22:15:01.327323 :
+	Received request to check user: value='victor_press' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-04-09T22:15:01.328163 :
+	checking email availability
+database/ORM_1 at 2026-04-09T22:15:01.328988 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-04-09T22:15:01.332715 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:15:01.333382 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:15:01.335469 :
+	Is email taken?: False
+Auth/common/username_check.py at 2026-04-09T22:15:01.336167 :
+	email_availability: True
+Auth/common/username_check.py at 2026-04-09T22:15:01.336819 :
+	checking username availability
+database/ORM_1 at 2026-04-09T22:15:01.337695 :
+	Executing DB query to check if Users.uname with value value='victor_press' exists.
+database/ORM_1 at 2026-04-09T22:15:01.341184 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:15:01.342035 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:15:01.344343 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-04-09T22:15:01.345080 :
+	Received a response, returning to registration module
+Auth/auth_moderator/registration.py at 2026-04-09T22:15:01.345786 :
+	Username and email are available. Proceeding with registration.
+Auth/auth_moderator/registration.py at 2026-04-09T22:15:01.346480 :
+	Hashing password.
+Auth/common/hashing.py at 2026-04-09T22:15:01.347119 :
+	pt_password: value=SecretStr('**********')
+Auth/common/hashing.py at 2026-04-09T22:15:01.347712 :
+	pt_password: **********
+Auth/auth_moderator/registration.py at 2026-04-09T22:15:01.607638 :
+	Result: {'message': 'User registered successfully.'}
+api/routers/auth.py at 2026-04-09T22:15:01.608341 :
+	User victor_press successfully registered in DB. Generating session...
+database/ORM_1 at 2026-04-09T22:15:01.609139 :
+	Executing DB query to check if Users.uname with value value='victor_press' exists.
+database/ORM_1 at 2026-04-09T22:15:01.612564 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:15:01.613133 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-04-09T22:15:01.615051 :
+	Is username taken?: True
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:15:01.615594 :
+	uname_result: {'username_available': False}
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:15:01.616136 :
+	Username not found during verification.
+utils/ErrorHandler at 2026-04-09T22:15:01.616635 :
+	Error occurred: Username not found, with error code: 3006, exception type: ValueError, and exception message: Username not found

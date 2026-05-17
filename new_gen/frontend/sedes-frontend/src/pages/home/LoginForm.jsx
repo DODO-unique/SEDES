@@ -17,7 +17,10 @@ export default function LoginForm({ onSwitchMode }) {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ user: username, pt_password: password })
+        body: JSON.stringify({ 
+          user: {value: username}, 
+          pt_password: {value: password }
+        })
       });
 
       const data = await res.json();

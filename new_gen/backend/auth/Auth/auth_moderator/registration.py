@@ -1,8 +1,8 @@
 from utils.validators.master_validator import Mail, UserName, Password
-from Auth.common.username_check import check_user
+from auth.Auth.common.username_check import check_user
 from utils.error_handler import ErrorCodes, initiate_error_handler
 from utils.logger import loggy
-from Auth.common.hashing import hash_password
+from auth.Auth.common.hashing import hash_password
 from database.ORM_1 import insert_user
 
 def log(msg: str) -> None:

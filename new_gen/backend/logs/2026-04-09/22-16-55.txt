@@ -1,0 +1,66 @@
+2026-04-09T22:16:55.776524 -> Created logs
+api/routers/auth.py at 2026-04-09T22:17:02.886392 :
+	Registration request received for username: victor_press
+Auth/common/username_check.py at 2026-04-09T22:17:02.887048 :
+	Received request to check user: value='victor_press' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-04-09T22:17:02.887518 :
+	checking email availability
+database/ORM_1 at 2026-04-09T22:17:02.888571 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-04-09T22:17:02.955337 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:17:02.955927 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:17:02.966591 :
+	Is email taken?: False
+Auth/common/username_check.py at 2026-04-09T22:17:02.967214 :
+	email_availability: True
+Auth/common/username_check.py at 2026-04-09T22:17:02.967697 :
+	checking username availability
+database/ORM_1 at 2026-04-09T22:17:02.968484 :
+	Executing DB query to check if Users.uname with value value='victor_press' exists.
+database/ORM_1 at 2026-04-09T22:17:02.975075 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:17:02.975618 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:17:02.977956 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-04-09T22:17:02.978699 :
+	Received a response, returning to registration module
+Auth/auth_moderator/registration.py at 2026-04-09T22:17:02.979252 :
+	Username and email are available. Proceeding with registration.
+Auth/auth_moderator/registration.py at 2026-04-09T22:17:02.979791 :
+	Hashing password.
+Auth/common/hashing.py at 2026-04-09T22:17:02.980358 :
+	pt_password: value=SecretStr('**********')
+Auth/common/hashing.py at 2026-04-09T22:17:02.980959 :
+	pt_password: **********
+Auth/auth_moderator/registration.py at 2026-04-09T22:17:03.242034 :
+	Result: {'message': 'User registered successfully.'}
+api/routers/auth.py at 2026-04-09T22:17:03.242868 :
+	User victor_press successfully registered in DB. Generating session...
+database/ORM_1 at 2026-04-09T22:17:03.243871 :
+	Executing DB query to check if Users.uname with value value='victor_press' exists.
+database/ORM_1 at 2026-04-09T22:17:03.248012 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:17:03.248564 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-04-09T22:17:03.251011 :
+	Is username taken?: True
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:17:03.251783 :
+	uname_result: {'username_available': False}
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:17:03.252427 :
+	Username victor_press verified successfully.
+Auth/common/hashing.py at 2026-04-09T22:17:03.253087 :
+	fetching hash for verification
+Auth/common/hashing.py at 2026-04-09T22:17:03.504226 :
+	Password verified.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:17:03.504801 :
+	Password verified for user victor_press.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:17:03.562795 :
+	Creating a new session for user.
+utils/ErrorHandler at 2026-04-09T22:17:03.582421 :
+	Error occurred: could not create session, with error code: 4005, exception type: DBAPIError, and exception message: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $3: UUID('9ade4cf7-9a79-4bda-8658-174f13ce58... (expected str, got UUID)
+[SQL: INSERT INTO running_sessions (id, user_id, token) VALUES ($1::UUID, $2::UUID, $3::VARCHAR) RETURNING running_sessions.created_at, running_sessions.expires_at]
+[parameters: (UUID('476bcc42-cc3a-491d-88fd-d0c0924003c1'), UUID('ccb81d63-1366-4045-a66f-0fb6e4391598'), UUID('9ade4cf7-9a79-4bda-8658-174f13ce5857'))]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)

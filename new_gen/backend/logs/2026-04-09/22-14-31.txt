@@ -1,0 +1,47 @@
+2026-04-09T22:14:31.209666 -> Created logs
+api/routers/auth.py at 2026-04-09T22:14:36.774847 :
+	Registration request received for username: victor_press
+Auth/common/username_check.py at 2026-04-09T22:14:36.775506 :
+	Received request to check user: value='victor_press' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-04-09T22:14:36.776089 :
+	checking email availability
+database/ORM_1 at 2026-04-09T22:14:36.777063 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-04-09T22:14:36.840386 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:14:36.841091 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:14:36.850916 :
+	Is email taken?: False
+Auth/common/username_check.py at 2026-04-09T22:14:36.851493 :
+	email_availability: True
+Auth/common/username_check.py at 2026-04-09T22:14:36.851969 :
+	checking username availability
+database/ORM_1 at 2026-04-09T22:14:36.852665 :
+	Executing DB query to check if Users.uname with value value='victor_press' exists.
+database/ORM_1 at 2026-04-09T22:14:36.857193 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:14:36.857757 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:14:36.859398 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-04-09T22:14:36.860053 :
+	Received a response, returning to registration module
+Auth/auth_moderator/registration.py at 2026-04-09T22:14:36.860659 :
+	Username and email are available. Proceeding with registration.
+Auth/auth_moderator/registration.py at 2026-04-09T22:14:36.861148 :
+	Hashing password.
+Auth/common/hashing.py at 2026-04-09T22:14:36.861672 :
+	pt_password: value=SecretStr('**********')
+Auth/common/hashing.py at 2026-04-09T22:14:36.862118 :
+	pt_password: **********
+Auth/auth_moderator/registration.py at 2026-04-09T22:14:37.117713 :
+	Result: {'message': 'User registered successfully.'}
+api/routers/auth.py at 2026-04-09T22:14:37.118305 :
+	User victor_press successfully registered in DB. Generating session...
+database/ORM_1 at 2026-04-09T22:14:37.119044 :
+	Executing DB query to check if Users.uname with value value='victor_press' exists.
+database/ORM_1 at 2026-04-09T22:14:37.123402 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:14:37.124005 :
+	DB query processed, is_taken: True

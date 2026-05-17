@@ -4,7 +4,7 @@ docstring for session manager
 manage sessions. Tasks seperated into functions
 '''
 from database.ORM_2 import fetch_line, new_session, get_session, remove_session
-from Sessions.session_manager_2 import is_session_running
+from auth.Sessions.session_manager_2 import is_session_running
 from utils.validators.master_validator import UserName
 from utils.logger import loggy
 from uuid import uuid4

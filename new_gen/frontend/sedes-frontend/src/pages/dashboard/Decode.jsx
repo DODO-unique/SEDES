@@ -187,7 +187,7 @@ export default function Decode() {
                 </svg>
               </div>
               <span className="upload-label"><strong>Upload encoded image</strong></span>
-              <span className="upload-hint">Use a PNG encoded by ProDot · JPG will corrupt the LSB data</span>
+              <span className="upload-hint">Use a PNG encoded by SEDES · JPG will corrupt the LSB data</span>
             </div>
 
             {imgSrc && (
@@ -258,7 +258,7 @@ export default function Decode() {
                     <circle cx="11" cy="11" r="8" />
                     <path d="M21 21l-4.35-4.35" />
                   </svg>
-                  <span>Upload a ProDot encoded image<br />and click Decode</span>
+                  <span>Upload a SEDES encoded image<br />and click Decode</span>
                 </div>
               )}
             </div>

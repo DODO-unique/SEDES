@@ -10,7 +10,7 @@ from utils.logger import loggy
 def log(msg: str) -> None:
     loggy("database/ORM_2", msg)
 
-URL = "postgresql+asyncpg://victor:yomama@localhost:5506/deferred"
+URL = "postgresql+asyncpg://postgres:postgres@localhost:5432/sedes"
 engine = create_async_engine(URL)
 
 

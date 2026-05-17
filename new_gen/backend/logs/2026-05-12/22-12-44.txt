@@ -1,0 +1,285 @@
+2026-05-12T22:12:44.462232 -> Created logs
+api/routers/auth.py at 2026-05-12T22:13:46.732164 :
+	Registration request received for username: this
+Auth/common/username_check.py at 2026-05-12T22:13:46.732799 :
+	Received request to check user: value='this' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-05-12T22:13:46.733434 :
+	checking email availability
+database/ORM_1 at 2026-05-12T22:13:46.734517 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-05-12T22:13:46.880387 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:13:46.881166 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-05-12T22:13:46.882975 :
+	Is email taken?: True
+Auth/common/username_check.py at 2026-05-12T22:13:46.883728 :
+	email_availability: False
+Auth/common/username_check.py at 2026-05-12T22:13:46.884305 :
+	checking username availability
+database/ORM_1 at 2026-05-12T22:13:46.885110 :
+	Executing DB query to check if Users.uname with value value='this' exists.
+database/ORM_1 at 2026-05-12T22:13:46.889009 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:13:46.889670 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-05-12T22:13:46.891248 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-05-12T22:13:46.891912 :
+	Received a response, returning to registration module
+utils/ErrorHandler at 2026-05-12T22:13:46.892489 :
+	Error occurred: Username or email already taken., with error code: 3004, exception type: ValueError, and exception message: Username or email already taken.
+api/routers/auth.py at 2026-05-12T22:13:48.675502 :
+	Registration request received for username: this
+Auth/common/username_check.py at 2026-05-12T22:13:48.676540 :
+	Received request to check user: value='this' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-05-12T22:13:48.677351 :
+	checking email availability
+database/ORM_1 at 2026-05-12T22:13:48.678863 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-05-12T22:13:48.683299 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:13:48.684362 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-05-12T22:13:48.696024 :
+	Is email taken?: True
+Auth/common/username_check.py at 2026-05-12T22:13:48.697377 :
+	email_availability: False
+Auth/common/username_check.py at 2026-05-12T22:13:48.698730 :
+	checking username availability
+database/ORM_1 at 2026-05-12T22:13:48.700134 :
+	Executing DB query to check if Users.uname with value value='this' exists.
+database/ORM_1 at 2026-05-12T22:13:48.704470 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:13:48.705597 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-05-12T22:13:48.708549 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-05-12T22:13:48.709733 :
+	Received a response, returning to registration module
+utils/ErrorHandler at 2026-05-12T22:13:48.710680 :
+	Error occurred: Username or email already taken., with error code: 3004, exception type: ValueError, and exception message: Username or email already taken.
+api/routers/auth.py at 2026-05-12T22:13:49.345176 :
+	Registration request received for username: this
+Auth/common/username_check.py at 2026-05-12T22:13:49.346196 :
+	Received request to check user: value='this' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-05-12T22:13:49.346997 :
+	checking email availability
+database/ORM_1 at 2026-05-12T22:13:49.347940 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-05-12T22:13:49.351795 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:13:49.352354 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-05-12T22:13:49.354156 :
+	Is email taken?: True
+Auth/common/username_check.py at 2026-05-12T22:13:49.354832 :
+	email_availability: False
+Auth/common/username_check.py at 2026-05-12T22:13:49.355325 :
+	checking username availability
+database/ORM_1 at 2026-05-12T22:13:49.356043 :
+	Executing DB query to check if Users.uname with value value='this' exists.
+database/ORM_1 at 2026-05-12T22:13:49.359999 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:13:49.360699 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-05-12T22:13:49.362707 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-05-12T22:13:49.363207 :
+	Received a response, returning to registration module
+utils/ErrorHandler at 2026-05-12T22:13:49.363802 :
+	Error occurred: Username or email already taken., with error code: 3004, exception type: ValueError, and exception message: Username or email already taken.
+api/routers/auth.py at 2026-05-12T22:14:15.558396 :
+	Registration request received for username: this_is_myname
+Auth/common/username_check.py at 2026-05-12T22:14:15.559396 :
+	Received request to check user: value='this_is_myname' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-05-12T22:14:15.560160 :
+	checking email availability
+database/ORM_1 at 2026-05-12T22:14:15.561162 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-05-12T22:14:15.565165 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:14:15.565840 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-05-12T22:14:15.568028 :
+	Is email taken?: True
+Auth/common/username_check.py at 2026-05-12T22:14:15.568648 :
+	email_availability: False
+Auth/common/username_check.py at 2026-05-12T22:14:15.569186 :
+	checking username availability
+database/ORM_1 at 2026-05-12T22:14:15.569994 :
+	Executing DB query to check if Users.uname with value value='this_is_myname' exists.
+database/ORM_1 at 2026-05-12T22:14:15.573075 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:14:15.573843 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-05-12T22:14:15.575673 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-05-12T22:14:15.576250 :
+	Received a response, returning to registration module
+utils/ErrorHandler at 2026-05-12T22:14:15.576810 :
+	Error occurred: Username or email already taken., with error code: 3004, exception type: ValueError, and exception message: Username or email already taken.
+api/routers/auth.py at 2026-05-12T22:14:16.144125 :
+	Registration request received for username: this_is_myname
+Auth/common/username_check.py at 2026-05-12T22:14:16.144806 :
+	Received request to check user: value='this_is_myname' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-05-12T22:14:16.145400 :
+	checking email availability
+database/ORM_1 at 2026-05-12T22:14:16.146112 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-05-12T22:14:16.150138 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:14:16.151074 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-05-12T22:14:16.152938 :
+	Is email taken?: True
+Auth/common/username_check.py at 2026-05-12T22:14:16.153531 :
+	email_availability: False
+Auth/common/username_check.py at 2026-05-12T22:14:16.154012 :
+	checking username availability
+database/ORM_1 at 2026-05-12T22:14:16.154660 :
+	Executing DB query to check if Users.uname with value value='this_is_myname' exists.
+database/ORM_1 at 2026-05-12T22:14:16.157538 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:14:16.158162 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-05-12T22:14:16.160674 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-05-12T22:14:16.161270 :
+	Received a response, returning to registration module
+utils/ErrorHandler at 2026-05-12T22:14:16.161810 :
+	Error occurred: Username or email already taken., with error code: 3004, exception type: ValueError, and exception message: Username or email already taken.
+api/routers/auth.py at 2026-05-12T22:14:20.241256 :
+	Registration request received for username: this_is_myname
+Auth/common/username_check.py at 2026-05-12T22:14:20.242116 :
+	Received request to check user: value='this_is_myname' and value='victorpresct554@gmail.com'
+Auth/common/username_check.py at 2026-05-12T22:14:20.242631 :
+	checking email availability
+database/ORM_1 at 2026-05-12T22:14:20.243268 :
+	Executing DB query to check if Users.email with value value='victorpresct554@gmail.com' exists.
+database/ORM_1 at 2026-05-12T22:14:20.246360 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:14:20.247026 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-05-12T22:14:20.249978 :
+	Is email taken?: False
+Auth/common/username_check.py at 2026-05-12T22:14:20.251132 :
+	email_availability: True
+Auth/common/username_check.py at 2026-05-12T22:14:20.251969 :
+	checking username availability
+database/ORM_1 at 2026-05-12T22:14:20.252717 :
+	Executing DB query to check if Users.uname with value value='this_is_myname' exists.
+database/ORM_1 at 2026-05-12T22:14:20.255717 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:14:20.256391 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-05-12T22:14:20.258382 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-05-12T22:14:20.259155 :
+	Received a response, returning to registration module
+Auth/auth_moderator/registration.py at 2026-05-12T22:14:20.259922 :
+	Username and email are available. Proceeding with registration.
+Auth/auth_moderator/registration.py at 2026-05-12T22:14:20.260775 :
+	Hashing password.
+Auth/common/hashing.py at 2026-05-12T22:14:20.261453 :
+	pt_password: value=SecretStr('**********')
+Auth/common/hashing.py at 2026-05-12T22:14:20.262047 :
+	pt_password: **********
+Auth/auth_moderator/registration.py at 2026-05-12T22:14:20.549995 :
+	Result: {'message': 'User registered successfully.'}
+api/routers/auth.py at 2026-05-12T22:14:20.550730 :
+	User this_is_myname successfully registered in DB. Generating session...
+database/ORM_1 at 2026-05-12T22:14:20.551575 :
+	Executing DB query to check if Users.uname with value value='this_is_myname' exists.
+database/ORM_1 at 2026-05-12T22:14:20.554462 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-05-12T22:14:20.555088 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-05-12T22:14:20.556711 :
+	Is username taken?: True
+auth/Auth/auth_moderator/verification.py at 2026-05-12T22:14:20.557421 :
+	Username this_is_myname verified successfully.
+Auth/common/hashing.py at 2026-05-12T22:14:20.558041 :
+	fetching hash for verification
+Auth/common/hashing.py at 2026-05-12T22:14:20.798366 :
+	Password verified.
+auth/Auth/auth_moderator/verification.py at 2026-05-12T22:14:20.799133 :
+	Password verified for user this_is_myname.
+auth/Auth/auth_moderator/verification.py at 2026-05-12T22:14:20.856761 :
+	Creating a new session for user.
+Sessions/session_manager at 2026-05-12T22:14:20.867500 :
+	created new session; returning token to Verification
+api/routers/auth.py at 2026-05-12T22:14:20.868185 :
+	Registration auto-login complete for this_is_myname.
+api/routers/stego.py at 2026-05-12T22:17:54.275625 :
+	Encode request initiated for user 85081da7-58e9-4599-94c1-5eda5023d67f
+database/ORM_4 at 2026-05-12T22:17:54.330465 :
+	User has no key. Generating one for encoding.
+cryptography/encryption_src_file.py at 2026-05-12T22:17:54.331115 :
+	Generating a new Fernet key
+database/ORM_4 at 2026-05-12T22:17:54.340385 :
+	Stored new encryption key for user.
+api/routers/stego.py at 2026-05-12T22:17:54.341095 :
+	Key fetched successfully for encode
+api/routers/stego.py at 2026-05-12T22:17:54.410824 :
+	Image loaded successfully for encoding
+api/routers/stego.py at 2026-05-12T22:17:54.411553 :
+	Steganography Injection started
+api/routers/stego.py at 2026-05-12T22:17:54.478521 :
+	Steganography Injection completed
+api/routers/stego.py at 2026-05-12T22:18:15.442373 :
+	Decode request initiated for user 85081da7-58e9-4599-94c1-5eda5023d67f
+api/routers/stego.py at 2026-05-12T22:18:15.448232 :
+	Key verified for decode.
+api/routers/stego.py at 2026-05-12T22:18:15.451635 :
+	Image loaded successfully for decoding
+api/routers/stego.py at 2026-05-12T22:18:15.452272 :
+	Steganography Extraction started
+api/routers/stego.py at 2026-05-12T22:18:16.282656 :
+	Steganography Extraction completed
+api/routers/stego.py at 2026-05-12T22:18:16.283467 :
+	Decrypting extracted payload
+api/routers/stego.py at 2026-05-12T22:18:16.285449 :
+	Decryption failed. Hash mismatch or corruption.
+utils/ErrorHandler at 2026-05-12T22:18:16.286123 :
+	Error occurred: Decryption failed. The message may not have been encrypted with your key, or it is corrupted., with error code: 4004, exception type: InvalidToken, and exception message: 
+api/routers/stego.py at 2026-05-12T22:18:33.177571 :
+	Decode request initiated for user 85081da7-58e9-4599-94c1-5eda5023d67f
+api/routers/stego.py at 2026-05-12T22:18:33.183290 :
+	Key verified for decode.
+api/routers/stego.py at 2026-05-12T22:18:33.186744 :
+	Image loaded successfully for decoding
+api/routers/stego.py at 2026-05-12T22:18:33.187420 :
+	Steganography Extraction started
+api/routers/stego.py at 2026-05-12T22:18:34.195872 :
+	Steganography Extraction completed
+api/routers/stego.py at 2026-05-12T22:18:34.196680 :
+	Decrypting extracted payload
+api/routers/stego.py at 2026-05-12T22:18:34.197465 :
+	Decryption failed. Hash mismatch or corruption.
+utils/ErrorHandler at 2026-05-12T22:18:34.198252 :
+	Error occurred: Decryption failed. The message may not have been encrypted with your key, or it is corrupted., with error code: 4004, exception type: InvalidToken, and exception message: 
+api/routers/stego.py at 2026-05-12T22:18:51.464178 :
+	Encode request initiated for user 85081da7-58e9-4599-94c1-5eda5023d67f
+api/routers/stego.py at 2026-05-12T22:18:51.470455 :
+	Key fetched successfully for encode
+api/routers/stego.py at 2026-05-12T22:18:51.477790 :
+	Image loaded successfully for encoding
+api/routers/stego.py at 2026-05-12T22:18:51.480146 :
+	Steganography Injection started
+api/routers/stego.py at 2026-05-12T22:18:51.617893 :
+	Steganography Injection completed
+api/routers/stego.py at 2026-05-12T22:19:15.814451 :
+	Decode request initiated for user 85081da7-58e9-4599-94c1-5eda5023d67f
+api/routers/stego.py at 2026-05-12T22:19:15.818812 :
+	Key verified for decode.
+api/routers/stego.py at 2026-05-12T22:19:15.822380 :
+	Image loaded successfully for decoding
+api/routers/stego.py at 2026-05-12T22:19:15.823092 :
+	Steganography Extraction started
+api/routers/stego.py at 2026-05-12T22:19:16.618329 :
+	Steganography Extraction completed
+api/routers/stego.py at 2026-05-12T22:19:16.619083 :
+	Decrypting extracted payload
+api/routers/stego.py at 2026-05-12T22:19:16.620909 :
+	Decode request successfully completed

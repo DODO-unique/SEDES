@@ -1,7 +1,7 @@
 from database.orm_schema import Users, EncryptionKeys
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
-from cryptography.encryption_src_file import generate_key
+from crypto_utils.encryption_src_file import generate_key
 from utils.error_handler import initiate_error_handler, ErrorCodes
 from utils.logger import loggy
 from uuid import UUID
@@ -9,7 +9,7 @@ from uuid import UUID
 def log(msg: str) -> None:
     loggy("database/ORM_4", msg)
 
-URL = "postgresql+asyncpg://victor:yomama@localhost:5506/deferred"
+URL = "postgresql+asyncpg://postgres:postgres@localhost:5432/sedes"
 engine = create_async_engine(URL)
 
 async def store_encryption_key(user_id: UUID, key: str) -> str:

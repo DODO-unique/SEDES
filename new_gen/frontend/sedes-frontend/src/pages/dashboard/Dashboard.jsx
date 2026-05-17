@@ -12,7 +12,7 @@ export default function Dashboard() {
       <nav>
         <Link className="nav-logo" to="/">
           <span className="logo-dot"></span>
-          ProDot
+          SEDES
         </Link>
 
         <div className="nav-tabs">
@@ -33,7 +33,7 @@ export default function Dashboard() {
         <div className="nav-right">
           <div className="user-chip">
             <div className="avatar">U</div>
-            <span>user@prodot.io</span>
+            <span>user@SEDES.io</span>
           </div>
         </div>
       </nav>

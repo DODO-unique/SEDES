@@ -1,0 +1,215 @@
+2026-04-09T22:18:08.950308 -> Created logs
+api/routers/auth.py at 2026-04-09T22:22:53.543300 :
+	Registration request received for username: victor_press
+Auth/common/username_check.py at 2026-04-09T22:22:53.543990 :
+	Received request to check user: value='victor_press' and value='victorprescott554@gmail.com'
+Auth/common/username_check.py at 2026-04-09T22:22:53.544512 :
+	checking email availability
+database/ORM_1 at 2026-04-09T22:22:53.545636 :
+	Executing DB query to check if Users.email with value value='victorprescott554@gmail.com' exists.
+database/ORM_1 at 2026-04-09T22:22:53.616196 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:22:53.616756 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:22:53.627452 :
+	Is email taken?: False
+Auth/common/username_check.py at 2026-04-09T22:22:53.628054 :
+	email_availability: True
+Auth/common/username_check.py at 2026-04-09T22:22:53.628726 :
+	checking username availability
+database/ORM_1 at 2026-04-09T22:22:53.629584 :
+	Executing DB query to check if Users.uname with value value='victor_press' exists.
+database/ORM_1 at 2026-04-09T22:22:53.633921 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:22:53.634485 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:22:53.636197 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-04-09T22:22:53.636716 :
+	Received a response, returning to registration module
+Auth/auth_moderator/registration.py at 2026-04-09T22:22:53.637253 :
+	Username and email are available. Proceeding with registration.
+Auth/auth_moderator/registration.py at 2026-04-09T22:22:53.637794 :
+	Hashing password.
+Auth/common/hashing.py at 2026-04-09T22:22:53.638374 :
+	pt_password: value=SecretStr('**********')
+Auth/common/hashing.py at 2026-04-09T22:22:53.638834 :
+	pt_password: **********
+Auth/auth_moderator/registration.py at 2026-04-09T22:22:53.901668 :
+	Result: {'message': 'User registered successfully.'}
+api/routers/auth.py at 2026-04-09T22:22:53.902426 :
+	User victor_press successfully registered in DB. Generating session...
+database/ORM_1 at 2026-04-09T22:22:53.903186 :
+	Executing DB query to check if Users.uname with value value='victor_press' exists.
+database/ORM_1 at 2026-04-09T22:22:53.907712 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:22:53.908423 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-04-09T22:22:53.910395 :
+	Is username taken?: True
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:22:53.910911 :
+	uname_result: {'username_available': False}
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:22:53.911361 :
+	Username victor_press verified successfully.
+Auth/common/hashing.py at 2026-04-09T22:22:53.911777 :
+	fetching hash for verification
+Auth/common/hashing.py at 2026-04-09T22:22:54.153029 :
+	Password verified.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:22:54.153752 :
+	Password verified for user victor_press.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:22:54.209670 :
+	Creating a new session for user.
+Sessions/session_manager at 2026-04-09T22:22:54.229606 :
+	created new session; returning token to Verification
+api/routers/auth.py at 2026-04-09T22:22:54.230259 :
+	Registration auto-login complete for victor_press.
+api/routers/stego.py at 2026-04-09T22:23:47.151015 :
+	Encode request initiated for user 9124a23e-0293-480d-841c-018a2f94f4c7
+database/ORM_4 at 2026-04-09T22:23:47.231186 :
+	User has no key. Generating one for encoding.
+cryptography/encryption_src_file.py at 2026-04-09T22:23:47.231801 :
+	Generating a new Fernet key
+database/ORM_4 at 2026-04-09T22:23:47.252581 :
+	Stored new encryption key for user.
+api/routers/stego.py at 2026-04-09T22:23:47.253459 :
+	Key fetched successfully for encode
+api/routers/stego.py at 2026-04-09T22:23:47.308085 :
+	Image loaded successfully for encoding
+api/routers/stego.py at 2026-04-09T22:23:47.308731 :
+	Steganography Injection started
+api/routers/stego.py at 2026-04-09T22:23:47.393236 :
+	Steganography Injection completed
+api/routers/stego.py at 2026-04-09T22:24:07.950835 :
+	Decode request initiated for user 9124a23e-0293-480d-841c-018a2f94f4c7
+api/routers/stego.py at 2026-04-09T22:24:07.955623 :
+	Key verified for decode.
+api/routers/stego.py at 2026-04-09T22:24:07.958105 :
+	Image loaded successfully for decoding
+api/routers/stego.py at 2026-04-09T22:24:07.958718 :
+	Steganography Extraction started
+api/routers/stego.py at 2026-04-09T22:24:08.753041 :
+	Steganography Extraction completed
+api/routers/stego.py at 2026-04-09T22:24:08.753753 :
+	Decrypting extracted payload
+api/routers/stego.py at 2026-04-09T22:24:08.754898 :
+	Decode request successfully completed
+api/routers/auth.py at 2026-04-09T22:30:01.210469 :
+	Registration request received for username: i_love_tusharr
+Auth/common/username_check.py at 2026-04-09T22:30:01.211638 :
+	Received request to check user: value='i_love_tusharr' and value='tushariscute@gmail.com'
+Auth/common/username_check.py at 2026-04-09T22:30:01.212800 :
+	checking email availability
+database/ORM_1 at 2026-04-09T22:30:01.214213 :
+	Executing DB query to check if Users.email with value value='tushariscute@gmail.com' exists.
+database/ORM_1 at 2026-04-09T22:30:01.220405 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:30:01.221305 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:30:01.224129 :
+	Is email taken?: False
+Auth/common/username_check.py at 2026-04-09T22:30:01.224765 :
+	email_availability: True
+Auth/common/username_check.py at 2026-04-09T22:30:01.225402 :
+	checking username availability
+database/ORM_1 at 2026-04-09T22:30:01.226085 :
+	Executing DB query to check if Users.uname with value value='i_love_tusharr' exists.
+database/ORM_1 at 2026-04-09T22:30:01.229478 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:30:01.230035 :
+	DB query processed, is_taken: False
+Auth/common/username_check.py at 2026-04-09T22:30:01.231724 :
+	Is username taken?: False
+Auth/common/username_check.py at 2026-04-09T22:30:01.232438 :
+	Received a response, returning to registration module
+Auth/auth_moderator/registration.py at 2026-04-09T22:30:01.232863 :
+	Username and email are available. Proceeding with registration.
+Auth/auth_moderator/registration.py at 2026-04-09T22:30:01.233549 :
+	Hashing password.
+Auth/common/hashing.py at 2026-04-09T22:30:01.234078 :
+	pt_password: value=SecretStr('**********')
+Auth/common/hashing.py at 2026-04-09T22:30:01.234555 :
+	pt_password: **********
+Auth/auth_moderator/registration.py at 2026-04-09T22:30:01.503872 :
+	Result: {'message': 'User registered successfully.'}
+api/routers/auth.py at 2026-04-09T22:30:01.504505 :
+	User i_love_tusharr successfully registered in DB. Generating session...
+database/ORM_1 at 2026-04-09T22:30:01.505157 :
+	Executing DB query to check if Users.uname with value value='i_love_tusharr' exists.
+database/ORM_1 at 2026-04-09T22:30:01.507845 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:30:01.508465 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-04-09T22:30:01.510025 :
+	Is username taken?: True
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:30:01.510683 :
+	uname_result: {'username_available': False}
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:30:01.511269 :
+	Username i_love_tusharr verified successfully.
+Auth/common/hashing.py at 2026-04-09T22:30:01.511980 :
+	fetching hash for verification
+Auth/common/hashing.py at 2026-04-09T22:30:01.761595 :
+	Password verified.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:30:01.762225 :
+	Password verified for user i_love_tusharr.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:30:01.771261 :
+	Creating a new session for user.
+Sessions/session_manager at 2026-04-09T22:30:01.790327 :
+	created new session; returning token to Verification
+api/routers/auth.py at 2026-04-09T22:30:01.790969 :
+	Registration auto-login complete for i_love_tusharr.
+api/routers/stego.py at 2026-04-09T22:30:16.496250 :
+	Encode request initiated for user a1e6682d-6ea9-4f3b-b14b-70fdddc5511a
+database/ORM_4 at 2026-04-09T22:30:16.501439 :
+	User has no key. Generating one for encoding.
+cryptography/encryption_src_file.py at 2026-04-09T22:30:16.502335 :
+	Generating a new Fernet key
+database/ORM_4 at 2026-04-09T22:30:16.518619 :
+	Stored new encryption key for user.
+api/routers/stego.py at 2026-04-09T22:30:16.520107 :
+	Key fetched successfully for encode
+api/routers/stego.py at 2026-04-09T22:30:16.524363 :
+	Image loaded successfully for encoding
+api/routers/stego.py at 2026-04-09T22:30:16.525030 :
+	Steganography Injection started
+api/routers/stego.py at 2026-04-09T22:30:16.667662 :
+	Steganography Injection completed
+api/routers/stego.py at 2026-04-09T22:30:30.118596 :
+	Decode request initiated for user a1e6682d-6ea9-4f3b-b14b-70fdddc5511a
+api/routers/stego.py at 2026-04-09T22:30:30.125530 :
+	Key verified for decode.
+api/routers/stego.py at 2026-04-09T22:30:30.128523 :
+	Image loaded successfully for decoding
+api/routers/stego.py at 2026-04-09T22:30:30.129144 :
+	Steganography Extraction started
+api/routers/stego.py at 2026-04-09T22:30:31.006502 :
+	Steganography Extraction completed
+api/routers/stego.py at 2026-04-09T22:30:31.007265 :
+	Decrypting extracted payload
+api/routers/stego.py at 2026-04-09T22:30:31.007994 :
+	Decode request successfully completed
+api/routers/auth.py at 2026-04-09T22:30:39.967848 :
+	Login request received for username: i_love_tusharr
+database/ORM_1 at 2026-04-09T22:30:39.968694 :
+	Executing DB query to check if Users.uname with value value='i_love_tusharr' exists.
+database/ORM_1 at 2026-04-09T22:30:39.971588 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:30:39.972502 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-04-09T22:30:39.975187 :
+	Is username taken?: True
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:30:39.975764 :
+	uname_result: {'username_available': False}
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:30:39.976383 :
+	Username i_love_tusharr verified successfully.
+Auth/common/hashing.py at 2026-04-09T22:30:39.976960 :
+	fetching hash for verification
+Auth/common/hashing.py at 2026-04-09T22:30:40.229361 :
+	Password verified.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:30:40.229956 :
+	Password verified for user i_love_tusharr.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:30:40.237498 :
+	User already has a running session. Returning existing session.
+Sessions/session_manager at 2026-04-09T22:30:40.245937 :
+	Wrapped session object
+api/routers/auth.py at 2026-04-09T22:30:40.246533 :
+	Login successful for username: i_love_tusharr. Session token generated.

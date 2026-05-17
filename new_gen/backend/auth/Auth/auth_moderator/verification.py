@@ -5,11 +5,11 @@ To verify we simply have to check if the credentials are avaialble. Usually only
 '''
 
 from utils.validators.master_validator import UserName, Password
-from Auth.common.hashing import verify_password
-from Auth.common.username_check import check_username
+from auth.Auth.common.hashing import verify_password
+from auth.Auth.common.username_check import check_username
 from utils.error_handler import initiate_error_handler, ErrorCodes
-from Sessions.session_manager import create_session, fetch_session
-from Sessions.session_manager_2 import is_session_running, kill_session
+from auth.Sessions.session_manager import create_session, fetch_session
+from auth.Sessions.session_manager_2 import is_session_running
 from utils.logger import loggy
 
 def log(msg: str):
@@ -22,7 +22,7 @@ async def verification(uname: UserName, password: Password):
 
     # first uname
     uname_result = await check_username(uname)
-    if not uname_result['username_available']:
+    if uname_result['username_available']:
         log("Username not found during verification.")
         initiate_error_handler(message="Username not found", errCode=ErrorCodes.USER_NOT_FOUND.value, error=ValueError("Username not found"))
     

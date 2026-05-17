@@ -1,0 +1,49 @@
+2026-04-09T22:38:25.734820 -> Created logs
+api/routers/auth.py at 2026-04-09T22:54:23.511432 :
+	Login request received for username: i_love_tusharr
+database/ORM_1 at 2026-04-09T22:54:23.515005 :
+	Executing DB query to check if Users.uname with value value='i_love_tusharr' exists.
+database/ORM_1 at 2026-04-09T22:54:23.601351 :
+	DB query executed, processing result.
+database/ORM_1 at 2026-04-09T22:54:23.601957 :
+	DB query processed, is_taken: True
+Auth/common/username_check.py at 2026-04-09T22:54:23.603760 :
+	Is username taken?: True
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:54:23.604283 :
+	Username i_love_tusharr verified successfully.
+Auth/common/hashing.py at 2026-04-09T22:54:23.604758 :
+	fetching hash for verification
+Auth/common/hashing.py at 2026-04-09T22:54:23.862335 :
+	Password verified.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:54:23.863141 :
+	Password verified for user i_love_tusharr.
+auth/Auth/auth_moderator/verification.py at 2026-04-09T22:54:23.935221 :
+	User already has a running session. Returning existing session.
+Sessions/session_manager at 2026-04-09T22:54:23.943455 :
+	Wrapped session object
+api/routers/auth.py at 2026-04-09T22:54:23.944060 :
+	Login successful for username: i_love_tusharr. Session token generated.
+api/routers/stego.py at 2026-04-09T22:54:49.578460 :
+	Encode request initiated for user a1e6682d-6ea9-4f3b-b14b-70fdddc5511a
+api/routers/stego.py at 2026-04-09T22:54:49.644313 :
+	Key fetched successfully for encode
+api/routers/stego.py at 2026-04-09T22:54:49.672012 :
+	Image loaded successfully for encoding
+api/routers/stego.py at 2026-04-09T22:54:49.672958 :
+	Steganography Injection started
+api/routers/stego.py at 2026-04-09T22:54:49.738128 :
+	Steganography Injection completed
+api/routers/stego.py at 2026-04-09T22:59:07.012806 :
+	Decode request initiated for user a1e6682d-6ea9-4f3b-b14b-70fdddc5511a
+api/routers/stego.py at 2026-04-09T22:59:07.018174 :
+	Key verified for decode.
+api/routers/stego.py at 2026-04-09T22:59:07.020558 :
+	Image loaded successfully for decoding
+api/routers/stego.py at 2026-04-09T22:59:07.021345 :
+	Steganography Extraction started
+api/routers/stego.py at 2026-04-09T22:59:07.759498 :
+	Steganography Extraction completed
+api/routers/stego.py at 2026-04-09T22:59:07.760122 :
+	Decrypting extracted payload
+api/routers/stego.py at 2026-04-09T22:59:07.760885 :
+	Decode request successfully completed

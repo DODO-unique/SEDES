@@ -21,20 +21,10 @@ class Users(Base):
 class RunningSessions(Base):
     __tablename__ = "running_sessions"
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
-    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), unique=True, nullable=False, ondelete="CASCADE")
-    token = Column(Text, unique=True, nullable=False)
+    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE"), unique=True, nullable=False)
+    token = Column(UUID(as_uuid=True), unique=True, nullable=False)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
     expires_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now() + interval '1 hour'"))
-
-
-class ScheduledMessages(Base):
-    __tablename__ = "scheduled_messages"
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
-    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False, ondelete="CASCADE")
-    prompt = Column(Text, nullable=False)
-    execute_at = Column(TIMESTAMP(timezone=True), nullable=False)
-    created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
-    job_status = Column(enum, nullable=False, server_default=text("'pending'")) #type: ignore
     
 
 class EncryptionKeys(Base):

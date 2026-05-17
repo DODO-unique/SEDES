@@ -250,7 +250,7 @@ export default function Encode() {
             {outputUrl && (
               <a 
                 href={outputUrl} 
-                download="prodot_encoded.png" 
+                download="SEDES_encoded.png" 
                 className="btn-secondary" 
                 style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}
               >

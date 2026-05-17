@@ -3,7 +3,7 @@ from fastapi.responses import Response
 from api.dependencies import get_current_user
 from database.ORM_4 import get_or_create_encryption_key, get_encryption_key_or_fail
 from utils.error_handler import initiate_error_handler, ErrorCodes
-from cryptography.encryption_src_file import encrypt_message, decrypt_message
+from crypto_utils.encryption_src_file import encrypt_message, decrypt_message
 from steganography.core import encode_image, decode_image
 from PIL import Image
 import io

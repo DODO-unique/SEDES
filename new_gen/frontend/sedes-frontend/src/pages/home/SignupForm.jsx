@@ -16,7 +16,7 @@ export default function SignupForm({ onSwitchMode }) {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ user: username, mail: email, pt_password: password })
+        body: JSON.stringify({ user: {value: username}, mail: {value: email}, pt_password: {value: password} })
       });
 
       const data = await res.json();
