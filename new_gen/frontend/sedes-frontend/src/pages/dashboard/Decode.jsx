@@ -93,7 +93,8 @@ export default function Decode() {
       const file = fileInputRef.current.files[0];
       formData.append("image", file);
 
-      const res = await fetch("http://localhost:8000/api/stego/decode", {
+      const API = import.meta.env.VITE_API_URL
+      const res = await fetch(`{API}/api/stego/decode`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`

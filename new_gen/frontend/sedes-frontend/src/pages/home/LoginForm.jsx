@@ -10,9 +10,9 @@ export default function LoginForm({ onSwitchMode }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // stops reload
-
+    const API = import.meta.env.VITE_API_URL
     try {
-      const res = await fetch("http://localhost:8000/api/auth/login", {
+      const res = await fetch(`{API}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

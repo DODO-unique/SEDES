@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Dashboard from "./pages/dashboard/Dashboard";
 
+const API = import.meta.env.VITE_API_URL
+
 function App() {
   return (
     <BrowserRouter>

@@ -9,9 +9,10 @@ export default function SignupForm({ onSwitchMode }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // stops reload
-
+    
+    const API = import.meta.env.VITE_API_URL
     try {
-      const res = await fetch("http://localhost:8000/api/auth/register", {
+      const res = await fetch(`{API}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

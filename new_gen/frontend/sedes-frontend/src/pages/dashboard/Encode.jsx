@@ -86,7 +86,8 @@ export default function Encode() {
       formData.append("image", file);
       formData.append("message", message);
 
-      const res = await fetch("http://localhost:8000/api/stego/encode", {
+      const API = import.meta.env.VITE_API_URL
+      const res = await fetch(`{API}/api/stego/encode`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`
