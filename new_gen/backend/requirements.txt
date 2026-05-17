@@ -6,3 +6,4 @@ pillow
 sqlalchemy
 asyncpg
 cryptography
+bcrypt
